@@ -1,4 +1,4 @@
-import * as express from 'express';
+import express from 'express';
 import * as httpStatus from 'http-status';
 import { Twitter } from '../services/twitter';
 

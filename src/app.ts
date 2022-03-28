@@ -1,4 +1,4 @@
-import * as express from 'express';
+import express from 'express';
 import { useSession } from './middlewares/session';
 import { useTwitterOauth2 } from './middlewares/twitter';
 import { createUserController } from './controllers/user';
@@ -13,7 +13,6 @@ export function createApp() {
   app.use(useTwitterOauth2());
   app.use(createUserController());
   app.use(createBookmarksController());
-
   app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
     console.error(err);
     res.sendStatus(500);

@@ -1,4 +1,4 @@
-import * as express from 'express';
+import express from 'express';
 import { Twitter } from '../services/twitter';
 
 export function createUserController(): express.Router {
@@ -6,7 +6,7 @@ export function createUserController(): express.Router {
 
   router.get('/api/auth', (req, res) => {
     const from = req.query.from as string;
-    console.log('Redirect to', from)
+    console.log('Redirect to', from);
 
     res.redirect(from || 'http://localhost:8100');
   });
